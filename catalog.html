@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Японські мінітрактори | VRM-Техніка</title>
+
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              500: '#F07F00',
+              600: '#D66F00',
+              700: '#B55B00',
+            },
+            dark: {
+              bg: '#1E1E1E',
+              surface: '#282828',
+              border: '#3D3D3D',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Фіксація темно-графітового фону на 100% ширини браузера */
+    html, body {
+      background-color: #1E1E1E !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-height: 100vh;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary { list-style: none; }
+
+    /* Стилізація акуратного скролбару для блоку брендів */
+    .filter-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .filter-scroll::-webkit-scrollbar-track {
+      background: #1E1E1E;
+      border-radius: 4px;
+    }
+    .filter-scroll::-webkit-scrollbar-thumb {
+      background: #3D3D3D;
+      border-radius: 4px;
+    }
+    .filter-scroll::-webkit-scrollbar-thumb:hover {
+      background: #F07F00;
+    }
+  </style>
+</head>
+<body class="bg-[#1E1E1E] text-white font-sans antialiased min-h-screen w-full pb-12">
+
+  <!-- ================================================================= -->
+<!-- 1. GLOBAL HEADER                                                  -->
+<!-- ================================================================= -->
+<header class="w-full bg-[#282828] border-b border-[#3D3D3D] sticky top-0 z-50">
+  
+  <!-- Top Micro Bar -->
+  <div class="border-b border-white/10 py-2.5 w-full bg-[#1E1E1E]/90 backdrop-blur-md">
+    <div class="max-w-[1280px] mx-auto px-4 flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm text-[#F8FAFC]">
+      
+      <!-- Ліва частина: Номери та локації майданчиків (клікабельні виклики) -->
+      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+        <div class="flex items-center gap-1.5">
+          <i class="ph-bold ph-map-pin text-[#F07F00] text-base"></i>
+          <span><strong>Івано-Франківськ:</strong> <a href="tel:+380960612070" class="hover:text-[#F07F00] transition-colors">(096) 061-20-70</a></span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <i class="ph-bold ph-map-pin text-[#F07F00] text-base"></i>
+          <span><strong>Рівне:</strong> <a href="tel:+380960729689" class="hover:text-[#F07F00] transition-colors">(096) 072-96-89</a></span>
+        </div>
+        <div class="hidden xl:flex items-center gap-1.5 text-white/80">
+          <i class="ph-bold ph-clock text-[#F07F00] text-base"></i>
+          <span>Пн-Сб 09:00–18:00</span>
+        </div>
+      </div>
+
+      <!-- Права частина: Валюта та Доставка -->
+      <div class="flex items-center gap-5 ml-auto">
+        <!-- Перемикач валют -->
+        <div class="flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded text-xs font-bold">
+          <span class="text-[#F07F00] cursor-pointer">UAH</span>
+          <span class="text-white/40">|</span>
+          <span class="text-white/70 hover:text-white cursor-pointer transition">USD</span>
+          <span class="text-white/40">|</span>
+          <span class="text-white/70 hover:text-white cursor-pointer transition">EUR</span>
+        </div>
+
+        <!-- Посилання Доставка та ПДВ -->
+        <a href="contacts.html" class="hover:text-[#F07F00] transition-colors font-medium text-xs sm:text-sm">
+          Доставка та ПДВ
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="max-w-[1280px] mx-auto px-4 h-[88px] sm:h-[96px] flex items-center justify-between gap-3 sm:gap-4">
+    
+    <!-- 1. Фірмовий Логотип VRM-Техніка -> перехід на Головну -->
+    <a href="index.html" class="flex flex-col items-center shrink-0 select-none pr-1">
+      <span class="text-[#F07F00] font-black text-[26px] sm:text-[30px] leading-none tracking-tight">VRM</span>
+      <span class="text-white font-extrabold text-[10px] sm:text-[11px] tracking-[0.25em] leading-tight uppercase mt-0.5">ТЕХНІКА</span>
+    </a>
+
+    <!-- 2. Кнопка Каталогу -> перехід у Каталог -->
+    <a href="catalog.html" class="h-12 bg-[#F07F00] hover:bg-[#D66F00] text-white px-4 sm:px-6 rounded-xl font-bold flex items-center gap-2 transition-colors cursor-pointer shrink-0 shadow-md">
+      <i class="ph-bold ph-squares-four text-xl"></i>
+      <span class="hidden md:inline">Каталог</span>
+      <i class="ph-bold ph-caret-down text-base hidden md:inline"></i>
+    </a>
+
+    <!-- Search Bar -->
+    <div class="flex-1 max-w-xl mx-2 hidden lg:block">
+      <div class="relative">
+        <input type="text" placeholder="Пошук тракторів, фрез, навісного..." class="w-full bg-[#1E1E1E] text-white pl-11 pr-4 py-2.5 rounded-xl border border-[#3D3D3D] focus:border-[#F07F00] focus:outline-none text-sm transition">
+        <i class="ph-bold ph-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-base"></i>
+      </div>
+    </div>
+
+    <!-- Дії користувача -->
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      
+      <!-- 3. Кнопка Зв'язатися -> перехід на Контакти -->
+      <a href="contacts.html" class="h-12 px-3 sm:px-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl flex items-center gap-2 transition-colors shrink-0">
+        <i class="ph-bold ph-chats-teardrop text-xl text-[#F07F00]"></i>
+        <span class="text-sm hidden md:inline">Зв'язатися</span>
+      </a>
+
+      <!-- 4. Кнопка Запчастини -> веде до розділу в каталозі -->
+      <a href="catalog.html" class="h-12 px-3 sm:px-4 bg-transparent border border-[#F07F00] text-[#F07F00] hover:bg-[#F07F00] hover:text-white font-bold text-sm rounded-xl flex items-center gap-1.5 transition-colors shrink-0">
+        <span class="hidden sm:inline">Запчастини</span>
+        <i class="ph-bold ph-arrow-up-right text-base"></i>
+      </a>
+
+      <!-- 5. Кнопка Кошик -> перехід на оформлення замовлення -->
+      <a href="checkout.html" class="p-2.5 sm:px-4 sm:py-2.5 rounded-xl bg-[#F07F00]/10 border border-[#F07F00]/30 text-[#F07F00] hover:bg-[#F07F00] hover:text-white transition flex items-center gap-2 font-bold text-sm group">
+  <i class="ph-bold ph-shopping-cart-simple text-xl"></i>
+  <span class="hidden sm:inline">Кошик</span>
+  <span class="bg-[#F07F00] text-white text-[10px] px-1.5 py-0.5 rounded-md font-extrabold group-hover:bg-white group-hover:text-[#F07F00]">1</span>
+</a>
+
+
+    </div>
+
+  </div>
+</header>
+
+
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 space-y-16 py-8 text-left">
+
+
+  <!-- ========================================== -->
+  <!-- 2. ОСНОВНИЙ КОНТЕЙНЕР СТОРІНКИ             -->
+  <!-- ========================================== -->
+  <div class="max-w-[1280px] mx-auto px-4 space-y-6 pt-4">
+
+   <!-- ================================================================= -->
+<!-- ХЛІБНІ КРИХТИ: КАТЕГОРІЯ ТОВАРІВ                                  -->
+<!-- ================================================================= -->
+<nav class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-3 text-left" aria-label="Хлібні крихти">
+  <ol class="flex items-center flex-wrap gap-2 text-xs sm:text-sm text-gray-400 font-medium">
+    <li>
+      <a href="index.html" class="hover:text-white transition flex items-center gap-1.5">
+        <i class="ph ph-house text-base"></i>
+        <span>Головна</span>
+      </a>
+    </li>
+    <li class="text-[#3D3D3D]"><i class="ph-bold ph-caret-right"></i></li>
+    <li>
+      <a href="catalog.html" class="hover:text-white transition">Каталог</a>
+    </li>
+    <li class="text-[#3D3D3D]"><i class="ph-bold ph-caret-right"></i></li>
+    <li class="text-[#F07F00] font-semibold" aria-current="page">
+      Вживані японські трактори
+    </li>
+  </ol>
+</nav>
+    <!-- ШАПКА КАТЕГОРІЇ (H1 + ЛІЧИЛЬНИК) -->
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+          Японські мінітрактори
+        </h1>
+        <span class="bg-[#F07F00]/20 text-[#F07F00] border border-[#F07F00]/30 text-sm font-bold px-3 py-1.5 rounded-full whitespace-nowrap">
+          Всього 42 моделі
+        </span>
+      </div>
+    </div>
+
+    <!-- ПАНЕЛЬ СОРТУВАННЯ (TOOLBAR) -->
+    <div class="bg-[#282828] p-3 sm:p-4 rounded-2xl border border-[#3D3D3D] flex flex-wrap items-center justify-between gap-4 shadow-lg">
+      <button type="button" class="lg:hidden flex items-center justify-center gap-2 bg-[#F07F00] text-white font-bold h-12 px-5 rounded-xl">
+        <i class="ph ph-sliders-horizontal text-xl"></i>
+        <span>Фільтри підбору</span>
+        <span class="bg-white text-[#F07F00] text-xs font-black px-2 py-0.5 rounded-full ml-1">13</span>
+      </button>
+
+      <div class="flex items-center gap-3 w-full sm:w-auto ml-auto sm:ml-0">
+        <label for="sort-select" class="text-sm font-semibold text-gray-300 whitespace-nowrap hidden sm:inline">
+          Сортування:
+        </label>
+        <select id="sort-select" class="bg-[#1E1E1E] border border-[#3D3D3D] text-white text-base font-semibold rounded-xl h-12 px-4 focus:ring-2 focus:ring-[#F07F00] outline-none cursor-pointer w-full sm:w-64">
+          <option value="popular">За популярністю</option>
+          <option value="price-asc">Спочатку дешевші</option>
+          <option value="price-desc">Спочатку дорожчі</option>
+          <option value="power-desc">За потужністю (від більшої)</option>
+        </select>
+      </div>
+
+      <div class="hidden md:flex items-center gap-1 bg-[#1E1E1E] p-1 rounded-xl border border-[#3D3D3D]">
+        <button type="button" aria-label="Відображати сіткою" class="w-10 h-10 flex items-center justify-center rounded-lg bg-[#F07F00] text-white shadow">
+          <i class="ph ph-squares-four text-xl"></i>
+        </button>
+        <button type="button" aria-label="Відображати списком" class="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-white transition-colors">
+          <i class="ph ph-list-bullets text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ОСНОВНА СІТКА (ФІЛЬТРИ + ТОВАРИ) -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+
+     <!-- БІЧНИЙ ФІЛЬТР (БЕЗ НУМЕРАЦІЇ В ЗАГОЛОВКАХ БЛОКІВ) -->
+<aside class="hidden lg:block lg:col-span-1 bg-[#282828] p-5 rounded-2xl border border-[#3D3D3D] space-y-5 shadow-xl">
+  
+  <div class="flex items-center justify-between pb-3 border-b border-[#3D3D3D]">
+    <h2 class="text-xl font-bold flex items-center gap-2 text-white">
+      <i class="ph ph-sliders-horizontal text-[#F07F00]"></i>
+      Фільтр підбору
+    </h2>
+    <button type="reset" form="catalog-filter-form" class="text-xs font-semibold text-gray-400 hover:text-[#F07F00] underline transition-colors min-h-[40px] px-1 flex items-center cursor-pointer">
+      Скинути все
+    </button>
+  </div>
+
+  <form id="catalog-filter-form" class="space-y-6" onsubmit="event.preventDefault();">
+
+    <!-- ========================================== -->
+    <!-- РОЗДІЛ: ОСНОВНІ ПАРАМЕТРИ                  -->
+    <!-- ========================================== -->
+    <div class="space-y-3">
+      <div class="text-[11px] font-extrabold text-[#F07F00] uppercase tracking-wider bg-[#F07F00]/10 px-2.5 py-1 rounded-md inline-block">
+        Основні параметри
+      </div>
+
+      <!-- Категорії (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span class="flex items-center gap-2">
+            <i class="ph ph-squares-four text-[#F07F00]"></i>
+            Всі категорії
+          </span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1 text-sm pl-1">
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg bg-[#F07F00]/10 text-[#F07F00] font-bold text-xs">
+            <span>Вживані японські трактори</span>
+            <i class="ph ph-caret-right text-xs"></i>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Мініекскаватори</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Мінінавантажувачі</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Спецтехніка</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Обладнання до мініекскаваторів</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Обладнання для мінінавантажувачів</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Вживані навантажувачі</span>
+          </a>
+          <a href="#" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-gray-300 hover:bg-[#1E1E1E] hover:text-white transition-colors text-xs">
+            <span>Навісне обладнання</span>
+          </a>
+          <a href="#" target="_blank" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-[#F07F00] font-semibold hover:bg-[#1E1E1E] transition-colors text-xs">
+            <span>Запасні частини</span>
+            <i class="ph ph-arrow-square-out text-sm"></i>
+          </a>
+        </div>
+      </details>
+
+      <!-- Наявність (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Статус наявності</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer">
+            <input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" />
+            <span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">В наявності</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer">
+            <input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" />
+            <span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Немає в наявності</span>
+          </label>
+        </div>
+      </details>
+
+      <!-- Ціна (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Ціна (грн / $)</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1">
+          <div class="grid grid-cols-2 gap-2">
+            <div class="relative flex items-center">
+              <input type="text" inputmode="numeric" pattern="[0-9]*" value="150000" class="w-full h-10 bg-[#1E1E1E] border border-[#3D3D3D] rounded-xl pl-3 pr-10 text-xs font-semibold text-white focus:ring-2 focus:ring-[#F07F00] outline-none" />
+              <span class="absolute right-2.5 text-[11px] font-bold text-gray-400 pointer-events-none select-none">грн</span>
+            </div>
+            <div class="relative flex items-center">
+              <input type="text" inputmode="numeric" pattern="[0-9]*" value="450000" class="w-full h-10 bg-[#1E1E1E] border border-[#3D3D3D] rounded-xl pl-3 pr-10 text-xs font-semibold text-white focus:ring-2 focus:ring-[#F07F00] outline-none" />
+              <span class="absolute right-2.5 text-[11px] font-bold text-gray-400 pointer-events-none select-none">грн</span>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Склад (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Локація / Склад</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer">
+            <input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" />
+            <span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Івано-Франківськ</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer">
+            <input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" />
+            <span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Рівне</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer">
+            <input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" />
+            <span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Спецтехніка</span>
+          </label>
+        </div>
+      </details>
+
+      <!-- Виробники (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] select-none min-h-[44px]">
+          <span>Виробник (13)</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1 max-h-48 overflow-y-auto filter-scroll pr-1 mt-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">HaiMark</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Iwafuji</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">LeiTe</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Maruyama</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Rippa</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Kubota</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Yanmar</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Iseki</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Mitsubishi</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Hitachi</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Hinomoto</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Komatsu</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Kobelco</span></label>
+        </div>
+      </details>
+    </div>
+
+    <!-- РОЗДІЛЮВАЧ МІЖ БЛОКАМИ -->
+    <hr class="border-[#3D3D3D] my-2" />
+
+    <!-- ========================================== -->
+    <!-- РОЗДІЛ: ТЕХНІЧНІ ХАРАКТЕРИСТИКИ            -->
+    <!-- ========================================== -->
+    <div class="space-y-3">
+      <div class="text-[11px] font-extrabold text-[#F07F00] uppercase tracking-wider bg-[#F07F00]/10 px-2.5 py-1 rounded-md inline-block">
+        Характеристики
+      </div>
+
+      <!-- Потужність (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Потужність (к.с.)</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1">
+          <div class="grid grid-cols-2 gap-2">
+            <div class="relative flex items-center">
+              <input type="text" inputmode="numeric" pattern="[0-9]*" value="7" placeholder="Від" class="w-full h-10 bg-[#1E1E1E] border border-[#3D3D3D] rounded-xl pl-3 pr-10 text-xs font-semibold text-white focus:ring-2 focus:ring-[#F07F00] outline-none" />
+              <span class="absolute right-2.5 text-[11px] font-bold text-gray-400 pointer-events-none select-none">к.с.</span>
+            </div>
+            <div class="relative flex items-center">
+              <input type="text" inputmode="numeric" pattern="[0-9]*" value="100" placeholder="До" class="w-full h-10 bg-[#1E1E1E] border border-[#3D3D3D] rounded-xl pl-3 pr-10 text-xs font-semibold text-white focus:ring-2 focus:ring-[#F07F00] outline-none" />
+              <span class="absolute right-2.5 text-[11px] font-bold text-gray-400 pointer-events-none select-none">к.с.</span>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Колісна формула (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Колісна формула</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">2х4</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">4х2</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">4х4</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Гусениці</span></label>
+        </div>
+      </details>
+
+      <!-- Кабіна (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Кабіна</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Так</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Ні</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Напівкабіна</span></label>
+        </div>
+      </details>
+
+      <!-- Гідропідсилювач керма (Згорнуто) -->
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Гідропідсилювач керма</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Так</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Ні</span></label>
+        </div>
+      </details>
+
+      <!-- Реверс (Згорнуто) -->
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] select-none min-h-[44px]">
+          <span>Реверс</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Так</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Ні</span></label>
+        </div>
+      </details>
+    </div>
+
+    <!-- РОЗДІЛЮВАЧ МІЖ БЛОКАМИ -->
+    <hr class="border-[#3D3D3D] my-2" />
+
+    <!-- ========================================== -->
+    <!-- РОЗДІЛ: ҐРУНТОФРЕЗА ТА ОПЦІЇ               -->
+    <!-- ========================================== -->
+    <div class="space-y-3">
+      <div class="text-[11px] font-extrabold text-[#F07F00] uppercase tracking-wider bg-[#F07F00]/10 px-2.5 py-1 rounded-md inline-block">
+        Ґрунтофреза та опції
+      </div>
+
+      <!-- Робоча ширина ґрунтофрези (Відкрито) -->
+      <details open class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Робоча ширина фрези</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1 max-h-52 overflow-y-auto filter-scroll pr-1 mt-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Без ґрунтофрези</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">60 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">90 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">100 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">110 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">115 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">120 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">120 см (газонокосарка)</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">125 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">130 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">135 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">140 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">148 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" checked class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">150 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">150 см "Yanmar"</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">150-180 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">152 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">160 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">170 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">180 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">180 см Yanmar</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">187 см KOBASHI</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">190 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">KOBASHI 190 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">NIPLO 190 см</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">240 см KOBASHI (до 2900 кг)</span></label>
+        </div>
+      </details>
+
+      <!-- Рівень горизонту (Згорнуто) -->
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] border-b border-[#3D3D3D] select-none min-h-[44px]">
+          <span>Рівень горизонту фрези</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Так</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Ні</span></label>
+        </div>
+      </details>
+
+      <!-- Швидкий розворот (Згорнуто) -->
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer py-2.5 font-bold text-sm text-gray-200 hover:text-[#F07F00] select-none min-h-[44px]">
+          <span>Швидкий розворот</span>
+          <i class="ph ph-caret-down text-base text-gray-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="pt-2 pb-1 space-y-1">
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Так</span></label>
+          <label class="flex items-center gap-2.5 p-1 rounded-lg hover:bg-[#1E1E1E] cursor-pointer"><input type="checkbox" class="peer w-4 h-4 accent-[#F07F00] cursor-pointer" /><span class="text-xs text-gray-200 peer-checked:text-[#F07F00] peer-checked:font-bold transition-colors">Ні</span></label>
+        </div>
+      </details>
+    </div>
+
+    <!-- КНОПКИ ДІЙ -->
+    <div class="space-y-2 pt-4 border-t border-[#3D3D3D]">
+      <button type="submit" class="w-full h-11 bg-[#F07F00] hover:bg-[#D66F00] text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm cursor-pointer">
+        <i class="ph ph-check-bold text-base"></i>
+        Застосувати фільтр
+      </button>
+      <button type="reset" class="w-full h-10 bg-transparent hover:bg-[#1E1E1E] text-gray-400 hover:text-white font-semibold rounded-xl border border-[#3D3D3D] transition-colors flex items-center justify-center gap-1.5 text-xs cursor-pointer">
+        <i class="ph ph-x text-sm"></i>
+        Скинути все
+      </button>
+    </div>
+
+  </form>
+</aside>
+
+      <!-- ОСНОВНА ЧАСТИНА: ТОВАРИ + ПАГІНАЦІЯ + БЛОК ЗАМОВЛЕННЯ ДЗВІНКА (ПРАВА КОЛОНКА 3/4) -->
+      <main class="lg:col-span-3 space-y-8">
+        
+        <!-- СІТКА ТОВАРІВ (DARK THEME VRM-ТЕХНІКА) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+
+  <!-- КАРТКА 1: KUBOTA -->
+  <article class="bg-[#282828] text-white rounded-2xl overflow-hidden shadow-xl border border-[#3D3D3D] hover:border-[#F07F00] transition-all duration-300 group flex flex-col justify-between h-full text-left">
+    <div class="relative aspect-[4/3] bg-[#1E1E1E] overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=600&q=80" 
+           alt="Kubota L1-225" 
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+           loading="lazy" />
+      
+      <!-- Бейджі на фото -->
+      <div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+        <span class="bg-[#059669]/90 text-white text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm border border-[#059669] shadow">
+          В наявності
+        </span>
+        <span class="bg-[#F07F00] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
+          Безкоштовна доставка
+        </span>
+      </div>
+
+      <!-- Кнопка "В обране" -->
+      <button type="button" 
+              aria-label="В обране" 
+              class="absolute top-3 right-3 w-10 h-10 bg-black/60 hover:bg-black/90 text-gray-300 hover:text-[#F07F00] border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all">
+        <i class="ph-bold ph-heart text-xl"></i>
+      </button>
+    </div>
+    
+    <div class="p-5 flex-1 flex flex-col justify-between text-left">
+      <!-- Верхня частина картки 1 -->
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Японія • Б/У без пробігу по укр</span>
+        <h3 class="text-lg font-black text-white group-hover:text-[#F07F00] transition-colors mt-0.5 min-h-[52px] flex items-center leading-snug">
+          Мінітрактор Kubota L1-225
+        </h3>
+      </div>
+
+      <!-- Нижня частина картки 1 (з mt-auto) -->
+      <div class="space-y-4 mt-auto pt-4 text-left">
+        <ul class="grid grid-cols-2 gap-2 text-xs font-semibold text-gray-300 bg-[#1E1E1E] p-3 rounded-xl border border-[#3D3D3D]">
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-lightning text-[#F07F00] text-base"></i><span>22.5 к.с.</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-gear text-[#F07F00] text-base"></i><span>Привід 4х4</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-engine text-[#F07F00] text-base"></i><span>3 цил. дизель</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-wrench text-[#F07F00] text-base"></i><span>Фреза 150 см</span></li>
+        </ul>
+
+        <div class="border-t border-[#3D3D3D] pt-3">
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-black text-[#FFFFFF] tracking-tight">245 000 грн</span>
+            <span class="text-sm font-semibold text-gray-400">$5 900</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="product.html" class="h-11 border border-[#3D3D3D] hover:border-[#F07F00] bg-[#1E1E1E] hover:bg-[#333333] text-white font-bold rounded-xl flex items-center justify-center text-xs sm:text-sm transition-all">
+            Детальніше
+          </a>
+          <a href="checkout.html" class="h-11 bg-[#F07F00] hover:bg-[#D66F00] text-white font-bold rounded-xl flex items-center justify-center gap-1.5 text-xs sm:text-sm transition-all shadow-md shadow-[#F07F00]/20">
+  <i class="ph-bold ph-phone-call text-base"></i>
+  <span>Замовити</span>
+</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- КАРТКА 2: YANMAR -->
+  <article class="bg-[#282828] text-white rounded-2xl overflow-hidden shadow-xl border border-[#3D3D3D] hover:border-[#F07F00] transition-all duration-300 group flex flex-col justify-between h-full text-left">
+    <div class="relative aspect-[4/3] bg-[#1E1E1E] overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" 
+           alt="Yanmar F20D" 
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+           loading="lazy" />
+      
+      <!-- Бейджі на фото -->
+      <div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+        <span class="bg-[#059669]/90 text-white text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm border border-[#059669] shadow">
+          В наявності
+        </span>
+         <span class="bg-[#F07F00] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
+          Гарантія 6 місяців
+        </span>
+      </div>
+
+      <!-- Кнопка "В обране" -->
+      <button type="button" 
+              aria-label="В обране" 
+              class="absolute top-3 right-3 w-10 h-10 bg-black/60 hover:bg-black/90 text-gray-300 hover:text-[#F07F00] border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all">
+        <i class="ph-bold ph-heart text-xl"></i>
+      </button>
+    </div>
+
+    <div class="p-5 flex-1 flex flex-col justify-between text-left">
+      <!-- Верхня частина картки 2 -->
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Японія • Обслужений</span>
+        <h3 class="text-lg font-black text-white group-hover:text-[#F07F00] transition-colors mt-0.5 min-h-[52px] flex items-center leading-snug">
+          Мінітрактор Yanmar F20D
+        </h3>
+      </div>
+
+      <!-- Нижня частина картки 2 (з mt-auto) -->
+      <div class="space-y-4 mt-auto pt-4 text-left">
+        <ul class="grid grid-cols-2 gap-2 text-xs font-semibold text-gray-300 bg-[#1E1E1E] p-3 rounded-xl border border-[#3D3D3D]">
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-lightning text-[#F07F00] text-base"></i><span>20.0 к.с.</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-gear text-[#F07F00] text-base"></i><span>Привід 4х4</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-engine text-[#F07F00] text-base"></i><span>3 цил. дизель</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-wrench text-[#F07F00] text-base"></i><span>Навісна система</span></li>
+        </ul>
+
+        <div class="border-t border-[#3D3D3D] pt-3">
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-black text-[#FFFFFF] tracking-tight">215 000 грн</span>
+            <span class="text-sm font-semibold text-gray-400">$5 180</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="product.html" class="h-11 border border-[#3D3D3D] hover:border-[#F07F00] bg-[#1E1E1E] hover:bg-[#333333] text-white font-bold rounded-xl flex items-center justify-center text-xs sm:text-sm transition-all">
+            Детальніше
+          </a>
+          <a href="checkout.html" class="h-11 bg-[#F07F00] hover:bg-[#D66F00] text-white font-bold rounded-xl flex items-center justify-center gap-1.5 text-xs sm:text-sm transition-all shadow-md shadow-[#F07F00]/20">
+  <i class="ph-bold ph-phone-call text-base"></i>
+  <span>Замовити</span>
+</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- КАРТКА 3: ISEKI -->
+  <article class="bg-[#282828] text-white rounded-2xl overflow-hidden shadow-xl border border-[#3D3D3D] hover:border-[#F07F00] transition-all duration-300 group flex flex-col justify-between h-full text-left">
+    <div class="relative aspect-[4/3] bg-[#1E1E1E] overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" 
+           alt="Iseki TU180" 
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+           loading="lazy" />
+      
+      <!-- Бейджі на фото -->
+      <div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+        <span class="bg-[#059669]/90 text-white text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm border border-[#059669] shadow">
+          В наявності
+        </span>
+         <span class="bg-[#F07F00] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
+          Безкоштовна доставка
+        </span>
+      </div>
+
+      <!-- Кнопка "В обране" -->
+      <button type="button" 
+              aria-label="В обране" 
+              class="absolute top-3 right-3 w-10 h-10 bg-black/60 hover:bg-black/90 text-gray-300 hover:text-[#F07F00] border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all">
+        <i class="ph-bold ph-heart text-xl"></i>
+      </button>
+    </div>
+
+    <div class="p-5 flex-1 flex flex-col justify-between text-left">
+      <!-- Верхня частина картки 3 -->
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Японія • Компактний клас</span>
+        <h3 class="text-lg font-black text-white group-hover:text-[#F07F00] transition-colors mt-0.5 min-h-[52px] flex items-center leading-snug">
+          Мінітрактор Iseki TU180
+        </h3>
+      </div>
+
+      <!-- Нижня частина картки 3 (з mt-auto) -->
+      <div class="space-y-4 mt-auto pt-4 text-left">
+        <ul class="grid grid-cols-2 gap-2 text-xs font-semibold text-gray-300 bg-[#1E1E1E] p-3 rounded-xl border border-[#3D3D3D]">
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-lightning text-[#F07F00] text-base"></i><span>18.5 к.с.</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-gear text-[#F07F00] text-base"></i><span>Привід 4х4</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-engine text-[#F07F00] text-base"></i><span>3 цил. дизель</span></li>
+          <li class="flex items-center gap-1.5"><i class="ph-bold ph-wrench text-[#F07F00] text-base"></i><span>Фреза у комплекті</span></li>
+        </ul>
+
+        <div class="border-t border-[#3D3D3D] pt-3">
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-black text-[#FFFFFF] tracking-tight">198 000 грн</span>
+            <span class="text-sm font-semibold text-gray-400">$4 770</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="product.html" class="h-11 border border-[#3D3D3D] hover:border-[#F07F00] bg-[#1E1E1E] hover:bg-[#333333] text-white font-bold rounded-xl flex items-center justify-center text-xs sm:text-sm transition-all">
+            Детальніше
+          </a>
+          <a href="checkout.html" class="h-11 bg-[#F07F00] hover:bg-[#D66F00] text-white font-bold rounded-xl flex items-center justify-center gap-1.5 text-xs sm:text-sm transition-all shadow-md shadow-[#F07F00]/20">
+  <i class="ph-bold ph-phone-call text-base"></i>
+  <span>Замовити</span>
+</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+       <!-- 5. ПАГІНАЦІЯ -->
+        <div class="space-y-6 pt-4">
+          <button type="button" class="w-full h-[52px] bg-dark-surface hover:bg-dark-border border border-dark-border text-white font-extrabold text-base rounded-2xl flex items-center justify-center gap-2 transition-all shadow-md focus:ring-2 focus:ring-brand-500 cursor-pointer">
+            <i class="ph ph-arrows-down text-xl text-brand-500" aria-hidden="true"></i>
+            Показати ще 12 тракторів
+          </button>
+          <nav aria-label="Pagination" class="flex flex-wrap justify-center items-center gap-2">
+            <a href="#" aria-label="Попередня сторінка" class="w-12 h-12 rounded-xl bg-dark-surface border border-dark-border text-white flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-colors focus:ring-2 focus:ring-white">
+              <i class="ph ph-caret-left text-xl"></i>
+            </a>
+            <a href="#" aria-current="page" class="w-12 h-12 rounded-xl bg-brand-500 text-white font-bold text-base flex items-center justify-center shadow-md">1</a>
+            <a href="#" class="w-12 h-12 rounded-xl bg-dark-surface border border-dark-border text-white font-bold text-base flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-colors focus:ring-2 focus:ring-white">2</a>
+            <a href="#" class="w-12 h-12 rounded-xl bg-dark-surface border border-dark-border text-white font-bold text-base flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-colors focus:ring-2 focus:ring-white">3</a>
+            <span class="text-gray-400 font-bold px-2">...</span>
+            <a href="#" class="w-12 h-12 rounded-xl bg-dark-surface border border-dark-border text-white font-bold text-base flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-colors focus:ring-2 focus:ring-white">8</a>
+            <a href="#" aria-label="Наступна сторінка" class="w-12 h-12 rounded-xl bg-dark-surface border border-dark-border text-white flex items-center justify-center hover:bg-brand-500 hover:border-brand-500 transition-colors focus:ring-2 focus:ring-white">
+              <i class="ph ph-caret-right text-xl"></i>
+            </a>
+          </nav>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- БЛОК ЗАМОВЛЕННЯ ДЗВІНКА (ПІД ТОВАРАМИ В MAIN) -->
+        <!-- ========================================== -->
+        <section class="bg-[#282828] border border-[#3D3D3D] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+          <!-- Декоративний помаранчевий акцент -->
+          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#F07F00]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-center relative z-10">
+            
+            <!-- Текстовий блок -->
+            <div class="xl:col-span-7 space-y-3">
+              <div class="inline-flex items-center gap-2 bg-[#F07F00]/15 border border-[#F07F00]/30 text-[#F07F00] text-xs font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                <i class="ph-bold ph-wrench text-base"></i>
+                <span>Підбір та консультація</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+                Не впевнені, яка модель підійде під ваші завдання?
+              </h2>
+              <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Наші сервісні інженери безкоштовно допоможуть обрати необхідну потужність, перевірять сумісність навісного обладнання та розрахують вартість доставки.
+              </p>
+              
+              <!-- Переваги -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs font-semibold text-gray-200">
+                <div class="flex items-center gap-2">
+                  <i class="ph-bold ph-check-circle text-[#F07F00] text-base"></i>
+                  <span>Підбір під тип ґрунту</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="ph-bold ph-check-circle text-[#F07F00] text-base"></i>
+                  <span>Консультація щодо ВВП</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Форма швидкого зв'язку -->
+            <div class="xl:col-span-5 bg-[#1E1E1E] p-4 sm:p-5 rounded-2xl border border-[#3D3D3D] space-y-3 shadow-xl">
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i class="ph-bold ph-headset text-[#F07F00] text-lg"></i>
+                Замовити дзвінок інженера
+              </h3>
+
+              <form class="space-y-3" onsubmit="event.preventDefault();">
+                <div>
+                  <label for="engineer-name" class="block text-[11px] font-semibold text-gray-400 mb-1">Ваше ім'я</label>
+                  <input type="text" id="engineer-name" placeholder="Іван" class="w-full h-10 bg-[#282828] border border-[#3D3D3D] text-white text-xs rounded-xl px-3 focus:ring-2 focus:ring-[#F07F00] outline-none" />
+                </div>
+
+                <div>
+                  <label for="engineer-phone" class="block text-[11px] font-semibold text-gray-400 mb-1">Номер телефону *</label>
+                  <input type="tel" id="engineer-phone" placeholder="+38 (067) 000-00-00" required class="w-full h-10 bg-[#282828] border border-[#3D3D3D] text-white text-xs rounded-xl px-3 focus:ring-2 focus:ring-[#F07F00] outline-none font-medium" />
+                </div>
+
+                <button type="submit" class="w-full h-11 bg-[#F07F00] hover:bg-[#D66F00] text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm cursor-pointer">
+                  <i class="ph-bold ph-phone-call text-base"></i>
+                  <span>Отримати консультацію</span>
+                </button>
+              </form>
+
+              <p class="text-[10px] text-gray-400 text-center">
+                Перетелефонуємо протягом 10 хвилин (Пн-Сб 09:00–18:00)
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div> <!-- Кінець сітки (grid-cols-4) -->
+
+  </div> <!-- Кінець контейнера (1280px) -->
+<footer class="mt-16 bg-[#282828] border-t border-[#3D3D3D] text-gray-400 text-sm text-left">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
+      
+      <!-- Блок 1: Логотип, короткий опис та соцмережі -->
+      <div class="lg:col-span-3 space-y-4 text-left">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F07F00] to-[#D66F00] flex items-center justify-center text-white shadow-lg shadow-[#F07F00]/20">
+            <i class="ph-fill ph-tractor text-2xl"></i>
+          </div>
+          <div class="leading-none text-left">
+            <span class="text-xl font-black tracking-wider text-white">VRM<span class="text-[#F07F00]">-ТЕХНІКА</span></span>
+            <span class="block text-[10px] tracking-widest uppercase text-gray-400 font-medium mt-0.5">Японська спецтехніка</span>
+          </div>
+        </a>
+        <p class="text-xs text-gray-400 leading-relaxed text-left">
+          Прямий імпортер японських мінітракторів, екскаваторів та навісного обладнання. Доставка власним автотранспортом по всій Україні без передоплати.
+        </p>
+        
+        <!-- Соцмережі під логотипом -->
+        <div class="flex items-center gap-3 pt-1">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-[#1E1E1E] border border-[#3D3D3D] flex items-center justify-center text-gray-300 hover:text-[#F07F00] hover:border-[#F07F00] transition">
+            <i class="ph-bold ph-facebook-logo text-lg"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-[#1E1E1E] border border-[#3D3D3D] flex items-center justify-center text-gray-300 hover:text-[#F07F00] hover:border-[#F07F00] transition">
+            <i class="ph-bold ph-youtube-logo text-lg"></i>
+          </a>
+          <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="w-9 h-9 rounded-lg bg-[#1E1E1E] border border-[#3D3D3D] flex items-center justify-center text-gray-300 hover:text-[#F07F00] hover:border-[#F07F00] transition">
+            <i class="ph-bold ph-telegram-logo text-lg"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-[#1E1E1E] border border-[#3D3D3D] flex items-center justify-center text-gray-300 hover:text-[#F07F00] hover:border-[#F07F00] transition">
+            <i class="ph-bold ph-instagram-logo text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Блок 2: Корисне -->
+      <div class="lg:col-span-2 text-left">
+        <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider text-left">Корисне</h4>
+        <ul class="space-y-2.5 text-xs text-left">
+          <li><a href="index.html" class="hover:text-[#F07F00] transition">Про нас</a></li>
+          <li><a href="contacts.html" class="hover:text-[#F07F00] transition">Доставка</a></li>
+          <li><a href="#" class="hover:text-[#F07F00] transition">Політика конфіденційності</a></li>
+          <li><a href="#" class="hover:text-[#F07F00] transition">Правила та умови</a></li>
+          <li><a href="#" class="hover:text-[#F07F00] transition">Мій акаунт</a></li>
+          <li><a href="checkout.html" class="hover:text-[#F07F00] transition">Мої замовлення</a></li>
+        </ul>
+      </div>
+
+      <!-- Блок 3: Клієнтам (Контакти тепер ведуть на contacts.html) -->
+     <!-- Блок 3: Клієнтам -->
+<div class="lg:col-span-2 text-left">
+  <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider text-left">Клієнтам</h4>
+  <ul class="space-y-2.5 text-xs text-left">
+    <li><a href="contacts.html" class="hover:text-[#F07F00] transition">Контакти</a></li>
+    <li><a href="#" class="hover:text-[#F07F00] transition">Повернення</a></li>
+    <li><a href="catalog.html" class="hover:text-[#F07F00] transition">Карта сайту</a></li>
+    <li><a href="catalog.html" class="hover:text-[#F07F00] transition">Виробники</a></li>
+  </ul>
+</div>
+
+      <!-- Блок 4: КОНТАКТИ (3 локації + телефони + email) -->
+      <div class="lg:col-span-5 space-y-4 text-left">
+        <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider text-left">Контакти</h4>
+        
+        <div class="space-y-4 text-xs text-left">
+          <!-- Локація 1: Угринів -->
+          <div class="space-y-1 text-left">
+            <a href="contacts.html" class="flex items-start gap-2 text-white font-semibold text-left hover:text-[#F07F00] transition group">
+              <i class="ph-bold ph-map-pin text-[#F07F00] text-base shrink-0 mt-0.5"></i>
+              <span class="group-hover:underline">вул. Галицька, 29Б, с. Угринів, Івано-Франківська обл.</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pl-6 text-gray-300">
+              <a href="tel:+380960612070" class="hover:text-[#F07F00] transition font-medium">(096) 061-20-70</a>
+              <span class="text-[#3D3D3D]">|</span>
+              <a href="tel:+380506751621" class="hover:text-[#F07F00] transition font-medium">(050) 675-16-21</a>
+            </div>
+          </div>
+
+          <!-- Локація 2: Івано-Франківськ -->
+          <div class="space-y-1 text-left">
+            <a href="contacts.html" class="flex items-start gap-2 text-white font-semibold text-left hover:text-[#F07F00] transition group">
+              <i class="ph-bold ph-map-pin text-[#F07F00] text-base shrink-0 mt-0.5"></i>
+              <span class="group-hover:underline">Калуське шосе, 2А, м. Івано-Франківськ, Івано-Франківська обл.</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pl-6 text-gray-300">
+              <a href="tel:+380960612070" class="hover:text-[#F07F00] transition font-medium">(096) 061-20-70</a>
+              <span class="text-[#3D3D3D]">|</span>
+              <a href="tel:+380506751621" class="hover:text-[#F07F00] transition font-medium">(050) 675-16-21</a>
+            </div>
+          </div>
+
+          <!-- Локація 3: Рівне -->
+          <div class="space-y-1 text-left">
+            <a href="contacts.html" class="flex items-start gap-2 text-white font-semibold text-left hover:text-[#F07F00] transition group">
+              <i class="ph-bold ph-map-pin text-[#F07F00] text-base shrink-0 mt-0.5"></i>
+              <span class="group-hover:underline">вул. Князя Володимира, 112А, м. Рівне, Рівненська обл.</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pl-6 text-gray-300">
+              <a href="tel:+380960729689" class="hover:text-[#F07F00] transition font-medium">(096) 072-96-89</a>
+              <span class="text-[#3D3D3D]">|</span>
+              <a href="tel:+380506751815" class="hover:text-[#F07F00] transition font-medium">(050) 675-18-15</a>
+            </div>
+          </div>
+
+          <!-- Електронна пошта -->
+          <div class="pt-2 border-t border-[#3D3D3D] text-left">
+            <a href="mailto:vrmtechnics@gmail.com" class="inline-flex items-center gap-2 text-white hover:text-[#F07F00] transition font-semibold">
+              <i class="ph-bold ph-envelope-simple text-[#F07F00] text-base"></i>
+              <span>vrmtechnics@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Нижня інформаційна смуга -->
+    <div class="border-t border-[#3D3D3D] mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 text-left">
+      <p>© 2026 ТОВ «ВРМ-ТЕХНІКА». Всі права захищені.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-gray-300 transition">Політика конфіденційності</a>
+        <a href="#" class="hover:text-gray-300 transition">Правила та умови</a>
+        <a href="catalog.html" class="hover:text-gray-300 transition">Карта сайту</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
